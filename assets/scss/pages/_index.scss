@@ -1,0 +1,110 @@
+%section-mb {
+    margin-bottom: 120px;
+
+    @include pc {
+        margin-bottom: 200px;
+    }
+}
+
+.carousel {
+    @extend %section-mb;
+
+    // 設定carousel-inner高度
+    // 讓caption的文字在手機板時可以定位在圖片下方
+    &-inner {
+        height: 820px;
+
+        @include pc {
+            height: 620px;
+        }
+
+        @include pc-lg {
+            height: 870px;
+        }
+
+        @include pc-xl {
+            height: 1080px;
+        }
+    }
+
+    &-item {
+        height: 620px;
+        border-radius: 0 0 120px 120px;
+
+        &.first {
+            background-image: url("../images/banner-1.png");
+            background-position: 83% center;
+        }
+
+        &.second {
+            background-image: url("../images/banner-2.png");
+            background-position: 75% center;
+        }
+
+        &.third {
+            background-image: url("../images/banner-3.png");
+            background-position: 75% center;
+        }
+
+        @include pc-lg {
+            height: 870px;
+        }
+
+        @include pc-xl {
+            height: 1080px;
+        }
+    }
+}
+
+.caption {
+    // 第一頁輪播-文字定位
+    left: 12px;
+    bottom:-32%;
+
+    @include pad {
+        left: 6.5%;
+    }
+
+    @include pc {
+        top: 32%;
+    }
+
+    @media (min-width:1600px) {
+        left: 10%;
+    }
+
+    // 第二、三頁輪播-文字定位
+    &.common {
+        @include pc {
+            top: 48%;
+            color: $white;
+        }
+
+        @media (min-width:1600px) {
+            top: 45.5%;
+        }
+    }
+
+    // banner文字
+    &-slogan {
+        font-size: 32px;
+
+        @include pc-lg {
+            font-size: 40px;
+        }
+
+        @include pc-xl {
+            font-size: 48px;
+        }
+    }
+}
+
+.prev-link {
+    border-radius: 100px 0 0 100px;
+    padding: 16px 14px 16px 24px;
+}
+
+.next-link {
+    border-radius: 0 100px 100px 0;
+    padding: 16px 24px 16px 14px;
+}

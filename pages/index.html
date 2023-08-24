@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carousel Question</title>
+  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+  <%- include('./layout/header', { currentPage: 'index' }); -%>
+
+    <!-- data-bs-touch="false" data-bs-interval="false" -->
+    <!-- data-bs-ride="carousel" -->
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- 輪播第一頁 -->
+        <div class="carousel-item first bg-size-cover active">
+          <div class="caption position-absolute">
+            <h2 class="caption-slogan lh-base mb-4">
+              <p class="fw-bold mb-0">嘿 , 讓我們提供您</p>
+              <p class="fw-bolder mb-0">最好的服務</p>
+              <p class="fw-bolder mb-0 text-primary ">家長安心 , 毛小孩開心</p>
+              <p class="fw-bolder mb-0 ">是我們的唯一宗旨</p>
+            </h2>
+            <div class="d-flex align-items-center">
+              <a href="#" data-bs-target="#carousel" data-bs-slide="prev" class="prev-link bg-black text-white lh-1"><i
+                  class="bi bi-arrow-left-short fs-4"></i></a>
+              <a href="#" data-bs-target="#carousel" data-bs-slide="next" class="next-link bg-black text-white lh-1"><i
+                  class="bi bi-arrow-right-short fs-4"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- 輪播第二頁 -->
+        <div class="carousel-item second bg-size-cover">
+          <div class="caption position-absolute common">
+            <h2 class="caption-slogan lh-base mb-4">
+              <p class="fw-bold mb-0">大狗友善，</p>
+              <p class="fw-bolder mb-0">多元環境。</p>
+            </h2>
+            <div class="d-flex align-items-center test">
+              <a href="#" data-bs-target="#carousel" data-bs-slide="prev" class="prev-link bg-black text-white lh-1"><i
+                  class="bi bi-arrow-left-short fs-4"></i></a>
+              <a href="#" data-bs-target="#carousel" data-bs-slide="next" class="next-link bg-black text-white lh-1"><i
+                  class="bi bi-arrow-right-short fs-4"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- 輪播第三頁 -->
+        <div class="carousel-item third bg-size-cover">
+          <div class="caption position-absolute common">
+            <h2 class="caption-slogan lh-base mb-4">
+              <p class="fw-bold mb-0">專業照顧，</p>
+              <p class="fw-bolder mb-0">業界第一。</p>
+            </h2>
+            <div class="d-flex align-items-center">
+              <a href="#" data-bs-target="#carousel" data-bs-slide="prev" class="prev-link bg-black text-white lh-1"><i
+                  class="bi bi-arrow-left-short fs-4"></i></a>
+              <a href="#" data-bs-target="#carousel" data-bs-slide="next" class="next-link bg-black text-white lh-1"><i
+                  class="bi bi-arrow-right-short fs-4"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../main.js"></script>
+    <script>
+      const hamBtn = document.querySelector(".ham");
+      const mobileMenu = document.querySelector(".mobile-menu .menu");
+      const hamCloseBtn = document.querySelector(".closedHam");
+      const body = document.body;
+
+      function toggleMenu() {
+        mobileMenu.classList.toggle('open');
+        body.classList.toggle('hidden-y');
+      };
+
+      hamBtn.addEventListener('click', toggleMenu);
+      hamCloseBtn.addEventListener("click", toggleMenu);
+    </script>
+</body>
+
+</html>
